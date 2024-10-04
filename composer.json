@@ -1,0 +1,24 @@
+{
+    "name": "zaynasheff/georus",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zaynasheff\\Georus\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roman Zaynashev",
+            "email": "zaynasheff@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zaynasheff\\Georus\\GeorusServiceProvider"
+            ]
+        }
+    }
+}
