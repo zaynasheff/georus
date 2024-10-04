@@ -6,7 +6,7 @@ namespace Zaynasheff\Georus;
 
 
 use Illuminate\Support\ServiceProvider;
-use Zaynasheff\Georus\Database\Seeders\DatabaseSeeder;
+
 
 class GeorusServiceProvider extends ServiceProvider
 {

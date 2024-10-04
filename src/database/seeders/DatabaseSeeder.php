@@ -1,8 +1,9 @@
 <?php
 
-namespace Zaynasheff\Georus\Database\Seeders;
+namespace Zaynasheff\Georus\database\seeders;
 
 use Database\Seeders\RegionsCitiesSeeder;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
