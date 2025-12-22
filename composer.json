@@ -1,6 +1,6 @@
 {
     "name": "zaynasheff/georus",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
