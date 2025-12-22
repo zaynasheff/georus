@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-
-
 use Illuminate\Database\Seeder;
-use Zaynasheff\Georus\App\Models\City;
-use Zaynasheff\Georus\App\Models\Region;
+
+
+use Zaynasheff\Georus\Models\City;
+use Zaynasheff\Georus\Models\Region;
 
 
 class RegionsCitiesSeeder extends Seeder
@@ -18,7 +18,7 @@ class RegionsCitiesSeeder extends Seeder
     {
         Region::query()->truncate();
 
-        $csvFile = fopen(base_path("database/data/regions.csv"), "r");
+        $csvFile = fopen(base_path("database/data/georus/regions.csv"), "r");
 
         $firstline = true;
 
@@ -29,13 +29,13 @@ class RegionsCitiesSeeder extends Seeder
                 if (!$firstline) {
 
                     if (isset($data[0]) && isset($data[1])){
-                        array_push($dataArr, [
-                            'region_id'=>$data[0],
-                            'title'=>$data[1],
-                            'created_at'=>now(),
-                            'updated_at'=>now(),
+                        $dataArr[] = [
+                            'region_id' => $data[0],
+                            'title' => $data[1],
+                            'created_at' => now(),
+                            'updated_at' => now(),
 
-                        ]);
+                        ];
                     }
 
                 }
@@ -52,7 +52,7 @@ class RegionsCitiesSeeder extends Seeder
 
         City::query()->truncate();
 
-        $csvFile = fopen(base_path("database/data/cities.csv"), "r");
+        $csvFile = fopen(base_path("database/data/georus/cities.csv"), "r");
 
         $firstline = true;
 
@@ -61,17 +61,17 @@ class RegionsCitiesSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 2500, ";")) !== FALSE) {
 
             if (!$firstline) {
-                array_push($dataArr, [
-                    "title"=> $data[1],
+                $dataArr[] = [
+                    "title" => $data[1],
                     "region" => $data[2],
                     "region_id" => $data[3],
                     "district" => $data[4],
                     "population" => $data[5],
                     "founded" => $data[6],
-                    'created_at'=>now(),
-                    'updated_at'=>now(),
+                    'created_at' => now(),
+                    'updated_at' => now(),
 
-                ]);
+                ];
 
             }
             $firstline = false;
