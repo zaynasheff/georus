@@ -25,25 +25,23 @@ class GeorusServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(): void
+    public function boot()
     {
-        // Автоматически подключаем миграции
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
-        // Даём возможность опубликовать
         $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations'),
+            __DIR__.'/database/migrations' => database_path('migrations'),
         ], 'georus-migrations');
 
+
         $this->publishes([
-            __DIR__.'/../database/seeders' => database_path('seeders'),
+            __DIR__.'/database/seeders' => database_path('seeders'),
         ], 'georus-seeders');
 
-        $this->publishes([
-            __DIR__.'/../database/data' => database_path('data/georus'),
-        ], 'georus-data');
-    }
 
+        $this->publishes([
+            __DIR__.'/database/data' => database_path('data/georus'),
+        ], 'georus-data');
+
+    }
 
 
 }
