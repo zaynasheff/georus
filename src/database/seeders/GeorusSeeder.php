@@ -9,7 +9,7 @@ use Zaynasheff\Georus\Models\City;
 use Zaynasheff\Georus\Models\Region;
 
 
-class RegionsCitiesSeeder extends Seeder
+class GeorusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
