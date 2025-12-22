@@ -29,7 +29,7 @@ class GeorusServiceProvider extends ServiceProvider
     {
 
         $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations'),
+            __DIR__.'/database/migrations' => database_path('migrations'),
         ], 'georus-migrations');
 
 
